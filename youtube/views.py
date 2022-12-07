@@ -7,7 +7,6 @@ from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from sqlalchemy import true
 from youtube.models import YoutubeVideoStatement
 from the_social_network.models import Statement, Account
 
@@ -96,5 +95,5 @@ class YoutubeStatementAdd(APIView):
 
         youtubeStatement = YoutubeVideoStatement.objects.create(video_id=youtubeVideoId, statement=statement, videoTime=videoTime, vote=vote)
         
-        serializer = YoutubeStatementSerializer(instance=[youtubeStatement], many=true)
+        serializer = YoutubeStatementSerializer(instance=[youtubeStatement], many=True)
         return Response(status=status.HTTP_200_OK, data=serializer.data)
