@@ -92,11 +92,15 @@ WSGI_APPLICATION = 'youtube_social_network.wsgi.application'
 #     }
 # }
 
+hostname = os.environ['DBHOST']
+
+# Configure Postgres database; the full username for PostgreSQL flexible server is
+# username (not @sever-name).
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ['DBNAME'],
-        'HOST': os.environ['DBHOST'],
+        'HOST': hostname + ".postgres.database.azure.com",
         'USER': os.environ['DBUSER'],
         'PASSWORD': os.environ['DBPASS']
     }
