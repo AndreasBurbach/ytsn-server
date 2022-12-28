@@ -1,4 +1,4 @@
-# YouTube - The Social Network
+# YouTube - Transcript Social Network
 
 This package is a django base backend server which includes [The Social Network](https://pypi.org/project/the-social-network/)
 It extends the-scoial-network to save statements for the transcript of a YouTube video.
